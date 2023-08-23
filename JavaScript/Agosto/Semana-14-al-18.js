@@ -152,3 +152,60 @@ const productos = [
 ];
 
 //Fin ejercicio Anabel Alesci
+
+//Ejercicio Yesica López
+
+//products.js
+const productos = [
+   {
+   	 id: 1,
+     productName:"Banana",
+     price:480,
+     quanty: 1,
+     img: "/client/media/banana.png",
+   },
+   { 
+     id:2,
+     productName:"Leche",
+     prince:950,
+     quanty:1,
+     img: "/client/media/leche.png",
+   },
+   {
+     id:3,
+     productName:"Pollo",
+     prince:750,
+     quanty:1,
+     img: "/cliente/media/pollo.png",	
+   },
+   {
+     id:4,
+     productName:"Mayonesa",
+     prince:510,
+     quanty:1,
+     img: "/cliente/media/mayonesa.png",
+   },
+  {
+    id: 5,
+    productName: "Watermelon",
+    price: 480,
+    quanty: 1,
+    img: "/client/media/watermelon.png",
+  },
+ ];
+
+//index.js
+const shopContent = document.getElementById("shopContent");
+
+productos.forEach((product)=>{
+	const content = document.createElement("div");
+	content.innerHTML = '
+	<img src="${product.img}">
+	<h3>${product.productName} </h3>
+	<p>${product.prince} $</p>
+	 ';
+	 shopContent.append(content);
+});
+
+//Fin ejercicio Yesica López
+
