@@ -209,3 +209,58 @@ productos.forEach((product)=>{
 
 //Fin ejercicio Yesica López
 
+
+//Ejercicio Matías Villa
+
+const productos = [
+    {
+    id: 1,
+    productName: "Banana",
+    price: 400,
+    quanty:1,
+    img:"Client/media/banana.jpg"
+    },
+
+    {
+        id:2,
+        productName:"Leche",
+        price:60,
+        quanty:1,
+        img:"Client/media/milk.jpg",
+
+
+    },
+
+    {
+        id:3,
+        productName:"Arroz",
+        price:20,
+        quanty:1,
+        img:"Client/media/rise.jpg", 
+    }
+
+    {
+        id:2,
+        productName:"huevo",
+        price:60,
+        quanty:1,
+        img:"Client/media/egg.jpg",
+    }
+]
+
+const shopContent = document.getElementById("shopContent");
+
+productos.forEach((product) => {
+    const content = document.createElement("div");
+    content.innerHTML= `
+    <img src="${producto.img}>
+    <h3>${product.productName}</h3>
+    <p>${product.price}$</p>
+
+    `;
+    shopContent.append(content);
+    
+    
+});
+
+//Fin ejerccio Matías.
