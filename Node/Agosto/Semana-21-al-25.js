@@ -25,3 +25,11 @@ console.log(nombre2);
 console.log("Hola mundo desde Node");
 
 //Fin ejercicio Jose Remaggi
+
+//Ejercicio de Anabel Alesci
+let nombre= 'Anabel';
+console.log(nombre);
+nombre= 'BGisella';
+console.log(nombre);
+
+//Fin Ejercicio de Anabel Alesci
