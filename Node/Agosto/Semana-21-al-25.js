@@ -15,3 +15,13 @@ nombre= 'Beatriz';
 console.log(nombre);
 
 //Fin Ejercicio de Yesica López
+
+//Ejercicio Jose Remaggi
+const nombre = "Jose";
+console.log(nombre);
+const nombre2 = "Bilbo";
+console.log(nombre2);
+
+console.log("Hola mundo desde Node");
+
+//Fin ejercicio Jose Remaggi
