@@ -33,3 +33,11 @@ nombre= 'BGisella';
 console.log(nombre);
 
 //Fin Ejercicio de Anabel Alesci
+
+//Ejercicio Matías
+let nombre = "Ariel";
+console.log(nombre);
+
+nombre ="Juan";
+console.log(nombre);
+//Fin ejercicio Matías
