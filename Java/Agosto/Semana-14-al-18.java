@@ -390,3 +390,34 @@ private static void mostrarMenu(){
 }
 
 //Fin ejercicio Jesús Mercado
+
+#Ejercicio Victoria Zaccaro
+  
+ //Método eliminar un estudiante
+    public boolean eliminarEstudiante(Estudiante estudiante){
+        //Creamos algunos objetos que son necesarios para comunicarnos con la base de datos
+        PreparedStatement ps; //Envia la sentencia a la base de datos
+        Connection con = getConexion(); //Creamos una instancia de la clase Conexion
+        String sql = "DELETE FROM estudiantes2022 WHERE idestudiantes2022 = ?"; //Sentencia SQL que se ejecutará en la base de datos
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, estudiante.getIdEstudiante());
+            ps.execute();
+            return true; //Si se elimina el estudiante
+        } catch (Exception e) {
+            System.out.println("Ocurió un error al eliminar datos: " + e.getMessage());
+        }
+        finally {
+            try {
+                con.close();
+            } catch (Exception e) {
+                System.out.println("Ocurrió un error al cerrar la conexión: " + e.getMessage());
+            }
+        } //Fin try-catch-finally
+        return false;
+    } //Fin metodo eliminarEstudiante
+
+    public static void main(String[] args) {
+        var estudianteDao = new EstudianteDAO();
+
+#fin ejercicio Victoria Zaccaro
