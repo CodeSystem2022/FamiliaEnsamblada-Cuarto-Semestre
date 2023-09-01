@@ -264,3 +264,50 @@ productos.forEach((product) => {
 });
 
 //Fin ejerccio Matías.
+
+#Ejercicio Victoria Zaccaro
+const shopContent= document.getElementById("shopContent");
+
+productos.forEach((product) =>{
+    const content= document.createElement("div");
+    content.innerHTML = `
+    <img src="${product.img}">
+    <h3>${product.productName}</h3>
+    <p>${product.price} $</p>
+    `;
+    shopContent.append(content);
+});
+
+const productos=[
+    {
+        id: 1,
+        productName: "Banana",
+        price: 480,
+        quanty: 1,
+        img: "../media/banana.png"
+    },
+    
+    {
+        id:2,
+        productName: "Leche",
+        price: 950,
+        quanty: 1,
+        img: "../media/leche.png"
+    
+    },
+    {
+        id:3,
+        productName:"Pollo",
+        price: 750,
+        quanty: 1,
+        img:"../media/pollo.png"
+    
+    },
+    {
+        id:4,
+        productName:"Mayonesa",
+        price: 510,
+        quanty: 1,
+        img:"../media/mayonesa.png"
+    }]
+#Fin Ejercicio Victoria Zaccaro
