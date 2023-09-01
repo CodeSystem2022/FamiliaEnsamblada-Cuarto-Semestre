@@ -115,3 +115,33 @@ spring.jpa.show-sql=true
 spring.main.web-application-type=none
 
 //Fin Ejercicio Anabel Alesci
+
+#Ejercicio Victoria Zaccaro
+	package utn.estudiantes;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class EstudiantesApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(EstudiantesApplication.class, args);
+    }
+
+}
+
+#Conexión MySQL
+spring.datasource.url=jdbc:mysql://localhost:3306/estudiantes
+spring.datasource.username=root
+spring.datasource.password=
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+#Evitar que se cree el esquema nuevamente
+spring.jpa.hibernate.ddl-auto=none
+spring.jpa.show-sql=true
+
+#Desactivar el Tomcat
+spring.main.web-application-type=none
+
+#Fin Ejercicio Victoria Zaccaro	
