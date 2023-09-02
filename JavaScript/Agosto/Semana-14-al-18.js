@@ -311,3 +311,52 @@ const productos=[
         img:"../media/mayonesa.png"
     }]
 #Fin Ejercicio Victoria Zaccaro
+
+// Ejercicio Jesús Mercado
+
+// index.js:
+const shopContent = document.getElementById("shopContent");
+
+productos.forEach((product) => {
+    const content = document.createElement("div");
+    content.innerHTML = `
+    <img src="${product.img}">
+    <h3>${product.productName}</h3>
+    <p>${product.price}</p>
+    `;
+    shopContent.append(content);
+});
+
+// products.js:
+const productos = [
+    {
+        id: 1,
+        productName: "Banana",
+        price: 480,
+        quanty: 1,
+        img: "/client/media/banana_1.png",
+    },
+    {
+        id: 2,
+        productName: "Leche",
+        price: 950,
+        quanty: 1,
+        img: "/client/media/leche.png",
+    },
+    {
+        id: 3,
+        productName: "Pollo",
+        price: 750,
+        quanty: 1,
+        img: "/client/media/pollo_3.png",
+    },
+    {
+        id: 4,
+        productName: "Mayonesa",
+        price: 510,
+        quanty: 1,
+        img: "/client/media/mayonesa_1.png",
+    },
+]
+
+// Fin Ejercicio Jesús Mercado
