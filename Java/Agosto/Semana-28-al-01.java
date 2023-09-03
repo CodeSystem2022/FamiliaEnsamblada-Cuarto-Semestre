@@ -26,3 +26,20 @@ public class Estudiante {
 }
 
 //Fin ejercicio Gerardo Duckwitz
+
+//Ejercicio de Yesica López
+
+package utn.estudiantes.servicio;
+
+import utn.estudiante.modelo.Estudiante;
+
+import java.util.List;
+
+public interface IEstudianteServicio{
+	public List<Estudiante> listarEstudiantes();
+	public Estudiante buscarEstudiantePorId(Integer idEstudiante);
+	public void guardarEstudiante(Estudiante estudiante);
+	public void eliminarEstudiante(Estudiante estudiante);
+}
+
+//Fin Ejercicio Yesica López
