@@ -42,7 +42,7 @@ print(f'a = base 5: {a}')
 
 #Ejercicio de Yesica López
 
-Profundizando en el tipo float
+#Profundizando en el tipo float
 a = 3.0
 
 #Constructor de tipo float -> puede recibir int y str
