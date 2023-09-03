@@ -116,7 +116,7 @@ spring.main.web-application-type=none
 
 //Fin Ejercicio Anabel Alesci
 
-#Ejercicio Victoria Zaccaro
+//Ejercicio Victoria Zaccaro
 	package utn.estudiantes;
 
 import org.springframework.boot.SpringApplication;
@@ -131,7 +131,7 @@ public class EstudiantesApplication {
 
 }
 
-#Conexión MySQL
+//Conexión MySQL
 spring.datasource.url=jdbc:mysql://localhost:3306/estudiantes
 spring.datasource.username=root
 spring.datasource.password=
@@ -144,4 +144,41 @@ spring.jpa.show-sql=true
 #Desactivar el Tomcat
 spring.main.web-application-type=none
 
-#Fin Ejercicio Victoria Zaccaro	
+//Fin Ejercicio Victoria Zaccaro	
+//Ejercicio Matías Villa
+
+package utn.estudiantes;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class EstudiantesApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(EstudiantesApplication.class, args);
+	}
+
+}
+
+//Conexión MySQL
+
+
+spring.datasource.url=jdbc:mysql://localhost:3306/estudiantes2
+spring.datasource.username=root
+spring.datasource.password=admin
+spring.datasource.drive-class-name=com.mysql.cj.jdbc.Driver
+
+#evitar que se cree el esquema nuevamente
+
+#no ejecutamos ninguna sentencia que modifique las operaciones o ejecuciones de la base de datos
+spring.jpa.hibernate.ddl-auto=none
+#Mostrar los sql que se ejecutaran
+spring.jpa.show-sql=true
+
+#Desactivar el tomcat porque la app no es web, es por consola
+spring.main.web-application-type=none
+#limpia la consola
+
+//Fin Ejercicio Matías Villa
+	
