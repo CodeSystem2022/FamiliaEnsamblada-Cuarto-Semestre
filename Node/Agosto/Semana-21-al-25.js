@@ -52,3 +52,15 @@ console.log(nombre);
 nombre ="Juan";
 console.log(nombre);
 //Fin ejercicio Matías
+
+// Ejercicio Jesús Mercado
+
+const nombre = 'Ariel';
+console.log(nombre);
+
+const nombre2 = 'Juan';
+console.log(nombre2);
+
+console.log('Hola mundo desde Node');
+
+// Fin Ejercicio Jesús Mercado
