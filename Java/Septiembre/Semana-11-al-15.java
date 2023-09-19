@@ -681,3 +681,167 @@ public class EstudiantesApplication implements CommandLineRunner {
 }
 
 //Fin Ejercicio Yesica López
+
+//Ejercicio Matías Villa
+
+package utn.estudiantes;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import utn.estudiantes.servicio.EstudianteServicio;
+import utn.estudiantes.modelo.estudiantes2023;
+
+import java.util.List;
+import java.util.Scanner;
+
+@SpringBootApplication
+public class EstudiantesApplication implements CommandLineRunner {
+
+	@Autowired
+	private EstudianteServicio estudianteServicio;
+	private static final Logger logger = LoggerFactory.getLogger(EstudiantesApplication.class);
+	String nl = System.lineSeparator();
+
+	public static void main(String[] args) {
+
+		logger.info("Iniciando la Aplicación....");
+		//Levantar la fabrica de Spring
+		SpringApplication.run(EstudiantesApplication.class, args);
+		logger.info("Aplicacion Finalizada");
+	}
+
+
+	@Override
+	public void run(String... args) throws Exception {
+		logger.info(nl+"Ejecutando el metodo Run de Spring..."+nl);
+		var salir = false;
+		var consola= new Scanner(System.in);
+		while(!salir){
+			mostrarMenu();
+			salir = ejecutarOpciones(consola);
+			logger.info(nl);
+		}//fin while
+	}
+
+	private void mostrarMenu(){
+
+		logger.info("""
+				*****Sistema Estudiantes****
+				1.listar Estudiantes
+				2.Buscar Estudiantes
+				3.Agregar Estudiantes
+				4.Modificar Estudiante
+				5.Eliminar Estudiante
+				6.Salir
+				Elija una opción:""");
+
+	}
+
+	private boolean ejecutarOpciones(Scanner consola){
+		var opcion = Integer.parseInt(consola.nextLine());
+		var salir = false;
+		switch (opcion){
+			case 1 ->{//listar estudiantes
+				logger.info(nl+"Listado de estudiantes:"+nl);
+				List<estudiantes2023> estudiantes = estudianteServicio.listarEstudiantes();
+				estudiantes.forEach((estudiantes2023 -> logger.info(estudiantes2023.toString()+nl)));
+
+			}
+
+			case 2 ->{
+				logger.info(nl+"Ingrese el id del estudiante a buscar:"+nl);
+				var idEstudiante = Integer.parseInt(consola.nextLine());
+				estudiantes2023 estudiante =
+						estudianteServicio.buscarEstudiantePorId(idEstudiante);
+				if (estudiante != null)
+					logger.info("estudiante encontrado"+estudiante+nl);
+				else
+					logger.info(("estudiante NO encontrado"+estudiante+nl));
+
+
+			}
+
+			case 3 -> {
+				logger.info("Agregamos estudiante: "+nl);
+				logger.info("Nombre: ");
+				var nombre = consola.nextLine();
+				logger.info("Apellido: ");
+				var appellido = consola.nextLine();
+				logger.info("Telefono: ");
+				var telefono = consola.nextLine();
+				logger.info("email: ");
+				var email=consola.nextLine();
+				//crear el objeto estudiante sin id
+				var estudiante = new estudiantes2023();
+				estudiante.setNombre(nombre);
+				estudiante.setApellido(appellido);
+				estudiante.setTelefono(telefono);
+				estudiante.setEmail(email);
+				estudianteServicio.guardarEstudiante(estudiante); //con estudiante Servicio guarda el estudiante en variable
+				logger.info("Estudiante Agregado"+estudiante+nl);
+			}
+
+			case 4 ->{
+				logger.info("Modificar estudiante: "+nl);
+				logger.info("ingrese id estudiante"+nl);
+				var idEstudiante = Integer.parseInt(consola.nextLine());
+				//buscamos estudiante
+				estudiantes2023 estudiante =
+						estudianteServicio.buscarEstudiantePorId(idEstudiante);
+				if (estudiante != null){
+					logger.info("Nombre: ");
+					var nombre = consola.nextLine();
+					logger.info("Apellido: ");
+					var appellido = consola.nextLine();
+					logger.info("Telefono: ");
+					var telefono = consola.nextLine();
+					logger.info("email: ");
+					var email=consola.nextLine();
+
+					estudiante.setNombre(nombre);
+					estudiante.setApellido(appellido);
+					estudiante.setTelefono(telefono);
+					estudiante.setEmail(email);
+
+					estudianteServicio.guardarEstudiante(estudiante);
+					logger.info("Estudiante modificado"+estudiante+nl);
+
+
+				}
+				else
+					logger.info("Estudiante No encontrado con el id:"+idEstudiante+nl);
+
+			}
+
+			case 5 ->{ //Eliminar
+				logger.info("Eliminar Estudiante"+nl);
+				logger.info("Digite el id estudiante: ");
+				var idEstudiante = Integer.parseInt(consola.nextLine());
+				//buscamos el id estudiante a elminar
+				var estudiante = estudianteServicio.buscarEstudiantePorId(idEstudiante);
+				if(estudiante!=null){
+					estudianteServicio.eliminarEstudiante(estudiante);
+					logger.info("Estudiante a eliminar"+estudiante+nl);
+				}
+				else
+					logger.info("Estudiante No encontrado"+estudiante+nl);
+
+			}
+
+			case 6 -> {//salir
+				logger.info("Hasta pronto"+nl+nl);
+			salir = true;
+			}
+			default -> logger.info("Opción no encontrada"+opcion+nl);
+		}//fin switch
+		return salir;
+	}
+}
+
+
+//Fin Ejercicio Matías Villa
+
