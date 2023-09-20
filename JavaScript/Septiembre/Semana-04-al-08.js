@@ -356,3 +356,91 @@ const deleteCartProduct = (id) => {
 };
 
 //Fin Ejercicio Yesica López
+
+//Ejercicio Matías Villa
+/*se incorporan los id dentro de una constante */
+const modalContainer = document.getElementById("modal-container");
+const modalOverlay = document.getElementById("modal-overlay");
+const cartBtn = document.getElementById("cart-btn"); 
+
+ //capturar id del contador de prodcutos
+ const cartCounter= document.getElementById("cart-counter");
+/* Crear el modal, es una función que dentro tiene la 
+creacion del modal y se ejecuta cuadno elusuario apriente el boton del carrito */
+
+const displayCart= () =>{
+    modalContainer.innerHTML="";
+    modalContainer.style.display="block"; //Establece un estilo para el container en Block para que se muestre 
+    modalOverlay.style.display = "block"; //Display block en el overlay para conrtadecir el css y dejar que se vea el container
+    
+    //header del modal
+    const modalHeader = document.createElement("div"); //crear un div donde se ejecuta el header del modal
+
+    const modalClose = document.createElement("div");
+    modalClose.innerText = "❌";
+    modalClose.className = "modal-close"; //clase para el css
+    modalHeader.append(modalClose); //agrega modal close al header 
+
+    modalClose.addEventListener("click", () => { //escucha el evento click y lo relaciona con la función 
+        modalContainer.style.display = "none"; //hace que el modal tome estilo none por lo tanto se cierra
+        modalOverlay.style.display= "none";
+    })
+
+    const modalTitle= document.createElement("div");
+    modalTitle.innerText = "Cart";
+    modalTitle.className= "modal-title"; 
+    modalHeader.append(modalTitle);
+
+    modalContainer.append(modalHeader); //agregar header al modal container
+    //modal body
+    //para mostrar los productos
+
+    cart.forEach((product) => {//recorrer cart
+        const modalBody=document.createElement("div"); //creamos el elementos div
+        modalBody.className="modal-body"; //clase para darle estilo al body
+        modalBody.innerHTML=`
+            <div class="product" src="${product.img}" />
+            <img class= "product-info">
+                <h4>${product.productName}<h4>
+            </div>
+            <div class="quantity">
+                <span class="quantity-btn-decrese">-</span>
+                <span class="quantity-input">${product.quanty}</span>
+                <span class="quantity-btn-increse>+</span>
+            </div>
+                <div class="price">${product.price * product.quanty}$</div>
+                <div class="delete-product">❌</div>
+        </div>    
+        `;
+        modalContainer.append(modalBody); //agregamos el modalBody al modalContainer
+
+       
+    });
+    
+
+    //modal footer 
+    
+    const total=cart.reduce((acc,el) => acc +el.price * el.quanty, 0);
+    const modalFooter = document.createElement("div");
+    modalFooter = document.createElement("div");
+    modalFooter.innerHTML=`
+        <div class="total-price">Total:${total} </div>
+    `;
+    modalContainer.append(modalFooter);
+
+
+};
+
+
+cartBtn.addEventListener("click", displayCart); //Escucha el evento (click) y ejecuta la función
+
+const deleteCartProduct=(id)=>{
+    
+    const foundId = cart.findIndex((element)=> element.id === id);
+    cart.splice(foundId,1);
+    displayCart();
+    
+
+};
+
+//Fin ejercicio Matías Villa
