@@ -50,3 +50,37 @@ print(MiClase.__doc__)
 
 
 //Fin ejercicio Gerardo Duckwitz
+
+#Ejercicio de Yesica López
+
+#str_inmutable.py
+
+#help(str.capitalize)
+mensaje1='hola mundo'
+mensaje2= mensaje1.capitalize()
+print(f'Mensaje1: {mensaje1}, id: {id(mensaje1)}')
+print(f'Mensaje2: {mensaje2}, id: {id(mensaje2)}')
+
+mensaje1 += 'Adios'
+print(f'Mensaje1: {mensaje1}, id: {id(mensaje1)}')
+
+
+#metodo_join.py
+
+tupla_str= ('Hola', 'alumnos', 'Tecnicatura', 'Universitaria')
+mensaje= ' '.join(tupla_str)
+print(f'Mensaje: {mensaje}')
+
+cadena= 'HolaMundo'
+mensaje= '.'.join(cadena)
+print(f'Mensaje: {mensaje}')
+
+diccionario= {'nombre': 'Juan', 'apellido': 'Perez', 'edad': '18'}
+llaves= '-'.join(diccionario.key())
+valores= '-'.join(diccionario.value())
+print(f'llaves: {llaves}, Type: {type(llaves)}')
+print(f'Valores: {valores}, Type: {type(valores)}')
+
+
+#Fin Ejercicio Yesica López
+
