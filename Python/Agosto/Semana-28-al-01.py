@@ -193,3 +193,37 @@ print(f'infinito negativo:{infinito_negativo}')
 print(f'¿Es infinito?:{math.isinf(infinito_negativo)}')
 
 #Fin ejercicio Matías Villa
+
+# ejercicio victoria zaccaro
+import math # importamos la clase math de operaciones matematicas
+from decimal import Decimal # importamos la clase decimal 
+
+#***Manejo de valores Infinitos****
+infinito_positivo = float('inf') 
+print(f'infinito positivo:{infinito_positivo}')
+print(f'¿Es infinito?: {math.isinf(infinito_positivo)}') 
+
+infinito_negativo = float('-inf')
+print(f'infinito negativo:{infinito_negativo}')
+print(f'¿Es infinito?:{math.isinf(infinito_negativo)}')
+
+# ****Modulo Math****
+infinito_positivo = math.inf
+print(f'infinito positivo:{infinito_positivo}')
+print(f'¿Es infinito?: {math.isinf(infinito_positivo)}')
+
+infinito_negativo = math.inf
+print(f'infinito negativo:{infinito_negativo}')
+print(f'¿Es infinito?:{math.isinf(infinito_negativo)}')
+
+#****Modulos Decimales****
+
+infinito_positivo = Decimal('Infinity')
+print(f'infinito positivo:{infinito_positivo}')
+print(f'¿Es infinito?: {math.isinf(infinito_positivo)}')
+
+infinito_negativo =  Decimal('-Infinity')
+print(f'infinito negativo:{infinito_negativo}')
+print(f'¿Es infinito?:{math.isinf(infinito_negativo)}')
+
+#Fin ejercicio victoria zaccaro
