@@ -50,3 +50,17 @@ console.log('Hola '+ nombre);
 console.log('Mi web es: ' + web);
 
 // Fin Ejercicio Anabel Alesci
+
+//Ejercicio Matías Villa
+
+//Variable de entorno
+//Ingresar informaciòn desde afuera hacia adentro
+let nombre = process.env.NOMBRE || 'Sin nombre';
+let web =   process.env.MI_WEB || 'No tengo web';
+console.log('Hola ' + nombre);
+console.log('Mi web es: '+web);
+
+
+//en consola: $env:NOMBRE="CARLOS"; node entorno.js
+//Se usa en mayusculas las variables de entorno porque así se hacia en linux
+//Fin ejercicio Matías Villa. 
