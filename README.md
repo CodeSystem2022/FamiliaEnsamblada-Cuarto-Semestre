@@ -58,4 +58,49 @@
       <td> 25 al 29 </td>
       <td> Victoria Zaccaro </td>
     </tr>
+    <tr>
+      <td> Octubre </td>
+      <td> 02 al 03 </td>
+      <td> Gerardo Duckwitz </td>
+    </tr>
+    <tr>
+      <td> Octubre </td>
+      <td> 09 al 13 </td>
+      <td> Yesica López </td>
+    </tr>
+    <tr>
+      <td> Octubre </td>
+      <td> 16 al 20 </td>
+      <td> Matias Villa</td>
+    </tr>
+     <tr>
+      <td> Octubre </td>
+      <td> 23 al 27 </td>
+      <td> Jesus Mercado </td>
+    </tr>
+     <tr>
+      <td> Noviembre </td>
+      <td> 01 al 03</td>
+      <td> Anabel Alesci </td>
+    </tr>
+     <tr>
+      <td> Noviembre </td>
+      <td> 06 al 10 </td>
+      <td> Jose Remaggi </td>
+    </tr>
+     <tr>
+      <td> Noviembre </td>
+      <td>13 al 17 </td>
+      <td> Victoria Zaccaro </td>
+    </tr>
+        <tr>
+      <td> Noviembre </td>
+      <td>20 al 24 </td>
+      <td> Gerardo Duckwitz </td>
+    </tr>
+        <tr>
+      <td> Noviembre </td>
+      <td>27 al 30 </td>
+      <td> Yesica Lopez </td>
+    </tr>
     
