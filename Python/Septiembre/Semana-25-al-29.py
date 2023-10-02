@@ -65,3 +65,37 @@ mensaje = 'Nombre {persona[nombre]} Edad{persona[edad]} Sueldo{persona[sueldo]:.
 print(mensaje)
 
 //Fin ejercicio Gerardo Duckwitz
+
+//Ejercicio Matías Villa
+#Dar formato a un string
+nombre='Ariel'
+edad=28
+mensaje_con_formato='Mi nombre es %s y tengo %d años'%(nombre,edad) #parametro posicional apunta a la varible
+
+print(mensaje_con_formato)
+#tupla
+persona=('Carla','Gomez',5000.00)
+mensaje_con_formato='Hola %s %s. Tu sueldo es: %.2f' #% persona #Aqui le pasamos el objeto
+#print(mensaje_con_formato %persona)
+
+nombre='Juan'
+edad=19
+sueldo=3000
+mensaje_con_formato='Nombre {} Edad {} Sueldo {:.2f}'.format(nombre, edad, sueldo) #placeHolder(marcador de posición)
+print(mensaje_con_formato)
+mensaje='Nombre {0} Edad {1} sueldo {2:.02f}'.format(nombre, edad, sueldo)
+print(mensaje)
+
+diccionario = {'nombre':'Ivan','edad':35,'sueldo': 8000.00}
+mensaje= 'Nombre{dic[nombre]} Edad{dic[edad]} Sueldo{dic[sueldo]}:.2f'.format(dic=diccionario)
+print(mensaje)
+
+nombre = 'Pepe'
+edad= 28
+sueldo=5000
+mensaje= f'Nombre {nombre} Edad {edad} sueldo {sueldo:.2f}'
+print(mensaje)
+
+print(nombre,edad,sueldo, sep=', ')
+
+//Fin ejercicio Matías
