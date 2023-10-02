@@ -147,3 +147,18 @@ from mi_clase import MiClase
 print(MiClase.mi_metodo.__doc__)
 
 #fin ejercicio victoria zaccaro
+
+
+#Ejercicio Matías Villa
+#Una vez que una variable recibe una cadena, no se puede modificar
+
+#help(str.capitalize)
+mensaje1='hola mundo'
+mensaje2=mensaje1.capitalize()
+print(f'Mensaje1: {mensaje1}, id: {id(mensaje1)}')
+print(f'mensaje2: {mensaje2}, id:{id(mensaje2)}')
+
+mensaje1+= ' Adios'
+print(f'Mensaje1: {mensaje1}, id: {id(mensaje1)}')
+
+#Fin ejercicio Matías.
