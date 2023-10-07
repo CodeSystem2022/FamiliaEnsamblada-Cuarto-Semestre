@@ -60,7 +60,7 @@
     </tr>
     <tr>
       <td> Octubre </td>
-      <td> 02 al 03 </td>
+      <td> 02 al 06 </td>
       <td> Gerardo Duckwitz </td>
     </tr>
     <tr>
