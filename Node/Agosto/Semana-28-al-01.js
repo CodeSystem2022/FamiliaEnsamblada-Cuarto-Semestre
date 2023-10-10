@@ -76,6 +76,35 @@ setTimeout(() => {
 console.log("Fin del programa"); //2
 
 //Fin Ejercicio de Jose Remaggi
+
+//Ejercicio victoria Zaccaro
+  const saludar = (nombre) => { //funcion de flecha
+    return `Saludos de ${nombre}` //ALT+96
+} //esto es igual a 'saludos'+nombre;
+
+console.log(saludar('Hugo'))//se llama a la funcion
+
+
+console.log('Inicio del programa');//se ejecuta primero
+
+setTimeout(() => {
+    console.log('Primer Timeout');//se ejecuta despues de 3 segundos
+}, 3000); //se le agrega el tiempo
+
+console.log('Inicio del programa');//se ejecuta primero
+setTimeout(() => {
+    console.log('Segundo Timeout');//se ejecuta despues de 0 segundos
+}, 0); //se le agrega el tiempo
+
+console.log('Inicio del programa');//se ejecuta primero
+setTimeout(() => {
+    console.log('Tercer Timeout');//    se ejecuta despues de 0 segundos
+}, 0); //se le agrega el tiempo
+
+console.log('Fin del programa   ');//se ejecuta primero
+
+//Fin ejercicio victoria zaccaro
+
 // Ejercicio Anabel Alesci
 const saludar = (nombre) => {
   //Función flecha
