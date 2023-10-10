@@ -27,13 +27,13 @@ console.log("Hola mundo desde Node");
 //Fin ejercicio Jose Remaggi
 
 #Ejercicio Victoria Zaccaro
-const nombre = 'Mercedes';
+const nombre = 'Ariel';
 console.log(nombre);
 
-const nombre2 = 'Victoria';
+const nombre = 'Juan';
 console.log(nombre2);
 
-console.log('Hola Mundo desde Node');
+console.log('Hola Mundo desde Node js');
 
 #F  Fin Ejercicio Victoria Zaccaro
 
