@@ -27,7 +27,7 @@ console.log("Hola mundo desde Node");
 //Fin ejercicio Jose Remaggi
 
 #Ejercicio Victoria Zaccaro
-const nombre = 'Hugo';
+const nombre = 'Mercedes';
 console.log(nombre);
 
 const nombre2 = 'Victoria';
