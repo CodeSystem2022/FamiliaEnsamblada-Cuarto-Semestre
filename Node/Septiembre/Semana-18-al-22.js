@@ -51,6 +51,14 @@ console.log('Mi web es: ' + web);
 
 // Fin Ejercicio Anabel Alesci
 
+//Ejercicio Victoria zaccaro
+let nombre = process.env.NOMBRE || 'Sin nombre';//si no existe la variable de entorno, se le asigna el valor 'Sin nombre'
+let web = process.env.MI_WEB || 'No tengo web';//si no existe la variable de entorno, se le asigna el valor 'No tengo web'
+
+console.log('Hola '+ nombre);//imprime en consola
+console.log('Mi web es: ' + web);//imprime en consola
+// Fin ejercicio victoria zaccaro
+
 //Ejercicio Matías Villa
 
 //Variable de entorno
