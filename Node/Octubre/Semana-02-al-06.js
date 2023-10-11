@@ -71,3 +71,22 @@ hola("Carlos", function (nombre) {
 // adios("Carlos", function () {});
 
 //Fin ejercicio Anabel Alesci
+
+//Ejercicio de Yesica López
+
+//callback.js
+// código sencillo
+
+funtion soyAsincronica(miCallback){
+    setTimeout( function () {
+	console.log('Hola, soy una función asíncrona');
+        miCallback();
+    },1000);
+}
+
+console.log('Iniciando el proceso...');
+soyAsincrona(function() {
+	console.log('Terminado el proceso...');
+});
+
+//Fin Ejercicio Yesica López
