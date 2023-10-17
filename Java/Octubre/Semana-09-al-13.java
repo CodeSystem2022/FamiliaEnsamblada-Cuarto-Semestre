@@ -15,7 +15,6 @@ public class LibroFrom extends JFrame {
         this.libroServicio = libroServicio;
         iniciarForma();
         agregarButton.addActionListener(e ->{
-
         });
     }
 }
