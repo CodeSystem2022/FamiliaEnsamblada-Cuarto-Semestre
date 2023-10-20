@@ -1,3 +1,4 @@
+
 // Ejercicio Gerardo Duckwitz
 function hola(nombre, miCallback) {
     return new Promise(function (resolve, reject) {

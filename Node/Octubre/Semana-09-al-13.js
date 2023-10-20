@@ -1,3 +1,4 @@
+
 //Ejercicio Gerardo Duckwitz
 function hola(nombre, miCallback) {
     setTimeout(function () {

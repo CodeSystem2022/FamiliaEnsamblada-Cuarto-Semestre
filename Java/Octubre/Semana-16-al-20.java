@@ -1,3 +1,4 @@
+
 // Ejercicio Gerardo Duckwitz
     private void cargarLibroSeleccionado(){
         //Los indices de las columnas inician en 0
@@ -41,3 +42,4 @@
     }
 
 //Fin ejercicio Gerardo Duckwitz
+
