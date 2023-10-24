@@ -286,3 +286,61 @@ function hola(nombre, miCallback) {
   //   });
   // });
 //Fin ejercicio victoria zaccaro
+
+// Ejercicio Jesús Mercado
+
+function hola(nombre, micallBack){
+    setTimeout(function () {
+        console.log('Hola ' + nombre);
+        micallBack(nombre);
+    }, 1000);
+}
+
+function hablar(callbackHablar){
+    setTimeout( function () {
+        console.log('bla bla bla bla');
+        callbackHablar();
+    }, 1000);
+}
+
+function adios(nombre, otroCallback) {
+    setTimeout(function() {
+        console.log('Adios' + nombre);
+        otroCallback();
+    }, 1500);
+}
+
+// Función Recursiva
+function conversacion(nombre, veces, callback){
+    if(veces > 0) {
+        hablar(function () {
+            conversacion(nombre, --veces, callback);
+        });
+    } else {
+        callback(nombre, callback);
+    }
+}
+
+// --Proceso Principal
+console.log('Iniciando el proceso...');
+hola('Ariel', function (nombre) {
+    conversacion(nombre, 4, function () {
+        console.log('terminando el proceso...');
+    });
+});
+// hola('Carlos', function(nombre) {
+//     hablar(function() {
+//         hablar(function() {
+//             hablar(function() {
+//                 hablar(function() {
+//                     adios(nombre, function(){
+//                         console.log('Terminando el proceso');
+//                     });
+//                 });
+//             });
+//         });
+//     }); 
+// });
+
+
+// Fin Ejercicio Jesús Mercado
