@@ -43,3 +43,21 @@
 
 //Fin ejercicio Gerardo Duckwitz
 
+//Ejercicio de Yesica López
+
+private void eliminarLibro(){
+	   var renglon = tablaLibros.getSelectedRow();
+           if(renglon != -1){
+              String idLibro = tablaLibros.getModel().getValueAt(renglon, 0).toString();
+              var libro = new Libro();
+              libro.setIdLibro(Integer.parseInt(idLibro));
+              libroServicio.eliminarLibro(libro);
+              mostrarMensaje("Libro "+idLibro+" ELIMINADO");
+              limpiarFormulario();
+              listarLibros();
+           }
+           else{
+              mostarMensaje("No se ha seleccionado ningún libro de la tabla a eliminar");
+           }
+ }
+//Fin Ejercicio Yesica López
