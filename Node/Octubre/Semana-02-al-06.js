@@ -142,3 +142,31 @@ hola('Carlos', function(nombre) {
 //adios('Carlos', function(){});
 
 // Fin Ejercicio Jesús Mercado
+
+//Ejercicio Matías Villa
+function soyAsincrona(nombre, miCallback) {
+    setTimeout(function() {
+        console.log('Hola, Soy una función Asíncrona tu nombre es: '+nombre)
+        miCallback();
+    }, 1000);
+   
+}
+
+function adios(nombre, otroCallback){
+    setTimeout(function(){
+        console.log('Adios', nombre)
+        otroCallback()
+    }, 1000);
+}
+
+console.log('Iniciando...')
+soyAsincrona('Carlos', function(){
+  
+    adios('Carlos', function(){
+        console.log('Terminando')
+    })
+}); //Llamado a la función
+
+//nodemon callback.js inicia el servidor 
+
+//Fin ejercicio Matías
