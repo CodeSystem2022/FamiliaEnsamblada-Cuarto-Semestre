@@ -315,7 +315,7 @@ private void iniciarForma(){
     set DefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setVisible(true);
     setSize(900, 700);
-    //Para obtener les dimenciones de la ventana
+    //Para obtener las dimenciones de la ventana
     Toolkit toolkit = Toolkit.getDefaultToolkit();
     Dimension tamanioPantalla = toolkit.getScreenSize();
     int x = (tamanioPantalla.width - getWidth()/2);
