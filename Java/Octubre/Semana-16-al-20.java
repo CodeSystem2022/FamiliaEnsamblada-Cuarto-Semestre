@@ -413,3 +413,155 @@ public class LibroFrom extends JFrame {
 }
 
 //Fin Ejercicio Matías Villa
+
+//Ejercicio Jose Remaggi
+
+package utn.tienda_libros.vista;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import utn.tienda_libros.modelo.Libro;
+import utn.tienda_libros.servicio.LibroServicio;
+
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+@Component
+public class LibroFrom extends JFrame {
+    LibroServicio libroServicio;
+    private JPanel panel;
+    private JTable TablaLibros;
+    private JScrollPane tablaLibros;
+
+    private JTextField LibroTexto;
+    private JTextField AutorTexto;
+    private JLabel Precio;
+    private JTextField PrecioTexto;
+    private JLabel Existencias;
+    private JTextField ExistenciasTexto;
+    private JLabel Autor;
+    private JLabel Libro;
+    private JButton Agregar;
+    private JButton modificarButton;
+    private JButton eliminarButton;
+    private JLabel libro;
+
+    private DefaultTableModel tablaModeloLibros;
+
+    @Autowired
+    public LibroFrom(LibroServicio libroServicio){
+        this.libroServicio = libroServicio;
+        iniciarForma();
+
+        Agregar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                agregarLibro();
+            }
+        });
+//
+//        Agregar.addActionListener(e -> {
+//
+//        });
+    }
+
+    public void setVisible(boolean b){
+        super.setVisible(b);
+    }
+
+
+    private void iniciarForma(){
+        //panel = new JPanel();
+        setContentPane(panel);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
+        setSize(900, 700);
+        //Anotación
+//        createUIComponents();
+//        pack();
+//        tablaLibros = new JScrollPane(TablaLibros);
+//        panel.add(tablaLibros);
+        //fin anotación
+
+        //Para obtener las dimensiones de la ventana
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Dimension tamanioPantalla = toolkit.getScreenSize();
+        int x = (tamanioPantalla.width - getWidth()/2);
+        int y = (tamanioPantalla.height - getHeight()/2);
+        setLocation(x,y);
+        setVisible(true);
+
+    }
+
+    private void agregarLibro(){
+        //Leer los valores del formulario (de cada caja de texto)
+        if (LibroTexto.getText().equals("")) {
+            mostrarMensaje("Ingresa el nombre del libro:");
+            LibroTexto.requestFocusInWindow();
+            return;
+        }
+
+        var nombreLibro = LibroTexto.getText();
+        var autor = AutorTexto.getText();
+        var precio = Double.parseDouble(PrecioTexto.getText());
+        var existencias = Integer.parseInt(ExistenciasTexto.getText());
+        // Creamos el objeto del libro
+        var libro = new Libro(null, nombreLibro, autor, precio, existencias);
+        this.libroServicio.guardarLibro(libro);
+        mostrarMensaje("Se agregó el libro...");
+        limpiarFormulario();
+        listarLibros();
+
+    }
+
+    private void limpiarFormulario() {
+        LibroTexto.setText(""); // Cambiado de libroTexto a LibroTexto
+        AutorTexto.setText(""); // Cambiado de autorTexto a AutorTexto
+        PrecioTexto.setText(""); // Cambiado de precioTexto a PrecioTexto
+        ExistenciasTexto.setText(""); // Cambiado de existenciasTexto a ExistenciasTexto
+    }
+
+    //Creamos el Método
+    private void mostrarMensaje(String mensaje){
+        JOptionPane.showMessageDialog(this, mensaje);
+
+    }
+    private void createUIComponents() {
+        this.tablaModeloLibros = new DefaultTableModel(0,5); //cero no se especifica renglon, cinco columnas
+        //Array para las 5 columnas
+        String[] cabecera = {"Id","Libro","Autor","Precio","Cantidades"};
+        this.tablaModeloLibros.setColumnIdentifiers(cabecera);
+        //Instanciar el objeto de Jtable
+
+        this.TablaLibros = new JTable(tablaModeloLibros);
+      //  this.tablaLibros = new JScrollPane(TablaLibros);
+
+        listarLibros();
+    }
+
+
+    private void listarLibros(){
+        //Limpiar la tabla
+        tablaModeloLibros.setRowCount(0);
+        //Obtener libros de la base de datos
+        var libros = libroServicio.listarLibros();
+        //Iteramos cada libro
+        libros.forEach((libro) -> {//función lambda
+            //creamos registro para agregarlos a la tabla
+            Object [] renglonlibro ={
+                    libro.getIdLibro(),
+                    libro.getNombreLibro(),
+                    libro.getAutor(),
+                    libro.getPrecio(),
+                    libro.getExistencias()
+            };
+            this.tablaModeloLibros.addRow(renglonlibro);//Agregamos a la tabla
+
+        });
+    }
+}
+
+//Fin Ejercicio Jose Remaggi
