@@ -607,3 +607,32 @@ private void cargarLibroSeleccionado(){
         }
     }
     //Fin Ejercicio Anabel Alesci
+//Ejercicio victoria zaccaro
+    private void eliminarLibro(){
+        var renglon = tablaLibros.getSelectedRow();
+        if(renglon != -1){
+            String idLibro =
+                    tablaLibros.getModel().getValueAt(renglon, 0).toString();
+            var libro = new Libro();
+            libro.setIdLibro(Integer.parseInt(idLibro));
+            libroServicio.eliminarLibro(libro);
+            mostrarMensaje("Libro " +idLibro+" ELIMINADO");
+            limpiarFormulario();
+            listarLibros();
+        }
+        else {
+            mostrarMensaje("No se ha seleccionado ningún libro de la tabla a eliminar");
+        }
+    }
+
+    private void limpiarFormulario() {
+        libroTexto.setText("");
+        autorTexto.setText("");
+        precioTexto.setText("");
+        existenciasTexto.setText("");
+    }
+
+    private void mostrarMensaje(String mensaje){
+        JOptionPane.showConfirmDialog(this, mensaje);
+    }
+//Fin ejercicio victoria zaccaro
