@@ -23,7 +23,7 @@ if __name__ =="__main__"
 
 # Fin ejercicio Gerardo Duckwitz
 
-// Ejercicio Jesús Mercado
+# Ejercicio Jesús Mercado
 
 import matplotlib.pyplot as plt
 
@@ -45,7 +45,7 @@ def run():
 if __name__ =="__main__"
     run()
 
-// Fin Ejercicio Jesús Mercado
+# Fin Ejercicio Jesús Mercado
 
 #Ejercicio de Yesica López
 
@@ -122,7 +122,7 @@ if __name__ =="__main__"
 
 
 # Fin ejercicio Anabel Alesci
-//Ejercicio Victoria zaccaro
+#Ejercicio Victoria zaccaro
 import matplotlib.pyplot as plt
 
 def generate_pie_chart():
@@ -142,4 +142,28 @@ def run():
 
 if __name__ =="__main__"
     run()
-//fin ejercicio victoria zaccaro
+#fin ejercicio victoria zaccaro
+
+#Ejercicio Matías VIlla
+import charts
+
+def run():
+    charts.generate_pie_chart()
+
+if __name__ == '__main__':
+    run()
+
+#Charts
+
+import matplotlib.pyplot as plt
+def generate_pie_chart():
+    labels = ['A','B','C']
+    values= [200,34,120]
+
+    fig, ax = plt.subplots()
+    ax.pie(values, labels=labels)
+    plt.savefig('pie.png')
+
+    plt.close()
+
+#Fin ejercicio Matías.
