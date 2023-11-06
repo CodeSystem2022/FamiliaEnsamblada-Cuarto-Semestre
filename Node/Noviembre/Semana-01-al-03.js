@@ -123,3 +123,47 @@ global.miVariable = 'mi variable Global';
 console.log(global.miVariable);
 
 // Fin Ejercicio Jesús Mercado
+
+//Ejercicio de Yesica López
+
+//this===globlar=true
+
+//Mostrar algo en consola
+//console.log();
+
+//Mostrar mensaje en forma de error
+//console.error();
+
+//Ejecutar un código después de un intervalo de tiempo
+//setTimeout(()=> {});
+
+//Ejecutar un código cada intervalo de tiempo
+//setInterval(()=> {});
+
+//Da prioridad a la ejecución de una funcion asincrona
+//setImmediate(()=> {});
+
+
+//console.log(setInterval);
+
+let i = 0;
+let intervalo = setInterval(()=> {
+   console.log('Hola');
+    if(i === 3){
+        clearInterval(intervalo); //detenemos la función
+    }
+    i++;
+}, 1000);
+
+setImmediate(() => {
+    console.log('Saludo Inmediato');
+});
+
+//require();
+
+console.log(__filename);
+
+global.miVariable = 'mi variable global';
+console.log(global.miVariable);
+
+//Fin Ejercicio Yesica López
