@@ -167,3 +167,43 @@ global.miVariable = 'mi variable global';
 console.log(global.miVariable);
 
 //Fin Ejercicio Yesica López
+
+//Ejercicio Jose Remaggi
+//this === global = true
+
+//Mostrar algo en consola
+// console.log();
+
+//Mostrar un mensaje en forma  de error
+// console.error();
+
+//Ejecutar un codigo despues de un intervalo de tiempo
+// setTimeout(() => {});
+
+//Ejecutamos un codigo cada intervalo de tiempo
+// setInterval(() => {});
+
+// setImmediate(() => {});
+
+// console.log(global);
+
+let i = 0;
+let intervalo = setInterval(() => {
+  console.log("Hola");
+  if (i === 3) {
+    clearInterval(intervalo);
+  }
+  i++;
+}, 1000);
+
+setImmediate(() => {
+  console.log("Saludo inmediato");
+});
+
+// require()
+// console.log(process);
+// console.log(__dirname);
+// console.log(__filename);
+global.miVariable = "mi variable global";
+console.log(miVariable);
+//Fin ejercicio Jose Remaggi
